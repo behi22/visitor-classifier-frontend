@@ -43,6 +43,9 @@ function App() {
         },
         {
           withCredentials: true,
+          headers: {
+            'Content-Type': 'application/json',
+          },
         }
       );
 
