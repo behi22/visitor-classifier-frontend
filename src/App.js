@@ -33,7 +33,7 @@ function App() {
     // Debugging: Log the URL being sent
     // console.log('URL being sent to backend:', validUrl);
 
-    const backendUrl = 'https://visitor-classifier.vercel.app';
+    const backendUrl = process.env.BACKEND_URL;
     try {
       const response = await axios.post(
         `${backendUrl}/classify`,
