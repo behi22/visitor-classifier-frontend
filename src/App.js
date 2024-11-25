@@ -33,7 +33,7 @@ function App() {
     // Debugging: Log the URL being sent
     // console.log('URL being sent to backend:', validUrl);
 
-    const backendUrl = process.env.BACKEND_URL;
+    const backendUrl = process.env.BACKEND_URL_API;
     try {
       const response = await axios.post(
         `${backendUrl}/classify`,
