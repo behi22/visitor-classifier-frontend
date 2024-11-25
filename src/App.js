@@ -33,11 +33,17 @@ function App() {
     // Debugging: Log the URL being sent
     // console.log('URL being sent to backend:', validUrl);
 
+    const backendUrl = 'https://visitor-classifier.vercel.app';
     try {
-      const backendUrl = 'https://visitor-classifier.vercel.app';
-      const response = await axios.post(`${backendUrl}/classify`, {
-        url: validUrl.trim(),
-      });
+      const response = await axios.post(
+        `${backendUrl}/classify`,
+        {
+          url: validUrl.trim(),
+        },
+        {
+          withCredentials: true,
+        }
+      );
 
       if (response.status === 200) {
         dispatch(setQuestions(response.data.questions));
